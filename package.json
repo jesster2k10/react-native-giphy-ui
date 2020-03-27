@@ -11,7 +11,7 @@
     "lib",
     "android",
     "ios",
-    "reactnativegiphyui.podspec"
+    "react-native-giphy-ui.podspec"
   ],
   "scripts": {
     "test": "jest",
