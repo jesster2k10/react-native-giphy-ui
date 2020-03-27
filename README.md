@@ -18,6 +18,8 @@ You can view the source code for the example application [here](./example/src/Ap
 
 ### iOS Application
 
+![iOS Demo](./ios-gif.gif)
+
 ## Installation
 
 Install the library using either yarn or npm like so:
