@@ -220,6 +220,7 @@ const App = () => {
 
 ### Roadmap
 
+- [ ] Extend coverage of the native api
 - [ ] Improve documentation
 - [ ] Unit tests
 - [ ] Flow support
