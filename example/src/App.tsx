@@ -44,8 +44,6 @@ export default function App() {
     );
   }, [mediaTypes, theme, rating, showConfirmationScreen, shouldLocalizeSearch]);
 
-  console.log(gif);
-
   return (
     <>
       <ScrollView
