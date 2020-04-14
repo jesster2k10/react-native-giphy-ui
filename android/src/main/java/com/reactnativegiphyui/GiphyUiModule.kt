@@ -14,7 +14,7 @@ import com.giphy.sdk.ui.views.GiphyDialogFragment
 class GiphyUiModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
     override fun getName(): String {
-        return "RNGiphyUi"
+        return "RNGiphyUI"
     }
 
     @ReactMethod
