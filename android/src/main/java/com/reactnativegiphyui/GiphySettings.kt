@@ -8,19 +8,20 @@ import com.giphy.sdk.ui.GPHSettings
 import com.giphy.sdk.ui.themes.GPHTheme
 import com.giphy.sdk.ui.themes.GridType
 
-class GiphySettings(val config: ReadableMap) {
+class GiphySettings(private val config: ReadableMap) {
   fun settings(): GPHSettings {
     val settings = GPHSettings()
     settings.theme = theme()
     settings.gridType = layout()
     settings.rating = rating()
-    settings.showConfirmationScreen = config.getBoolean("showConfirmationScreen")
+    settings.showConfirmationScreen = if (config.hasKey("showConfirmationScreen")) config.getBoolean("showConfirmationScreen") else false
     settings.mediaTypeConfig = mediaTypes()
     return settings
   }
 
   private fun theme(): GPHTheme {
-    return when (config.getString("theme")) {
+    val theme = if (config.hasKey("theme")) config.getString("theme") else "automatic"
+    return when (theme) {
       "dark" -> GPHTheme.Dark
       "light" -> GPHTheme.Light
       else -> GPHTheme.Automatic
@@ -28,7 +29,8 @@ class GiphySettings(val config: ReadableMap) {
   }
 
   private fun layout(): GridType {
-    return when (config.getString(("layout"))) {
+    val layout = if (config.hasKey("layout")) config.getString("layout") else "waterfall"
+    return when (layout) {
       "waterfall" -> GridType.waterfall
       "carousel" -> GridType.carousel
       "emoji" -> GridType.emoji
@@ -37,7 +39,8 @@ class GiphySettings(val config: ReadableMap) {
   }
 
   private fun rating(): RatingType {
-    return when (config.getString("rating")) {
+    val rating = if (config.hasKey("rating")) config.getString("rating") else "ratedPG13"
+    return when (rating) {
       "ratedPG" -> RatingType.pg
       "ratedPG13" -> RatingType.pg13
       "ratedR" -> RatingType.r
@@ -51,7 +54,7 @@ class GiphySettings(val config: ReadableMap) {
   }
 
   private fun mediaTypes(): Array<GPHContentType> {
-    val mediaTypes = config.getArray("mediaTypes")?.toArrayList()
+    val mediaTypes = if (config.hasKey("mediaTypes")) config.getArray("mediaTypes")?.toArrayList() else null
     if (mediaTypes === null) {
       return emptyArray()
     }
