@@ -1,6 +1,6 @@
 {
   "name": "react-native-giphy-ui",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Cross Platform React Native Wrapper around the Giphy UI SDK for both iOS and Android",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
