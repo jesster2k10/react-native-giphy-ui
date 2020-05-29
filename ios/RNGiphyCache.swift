@@ -13,7 +13,7 @@ import GiphyUISDK
 @objc(RNGiphyCache)
 class RNGiphyCache: NSObject {
   @objc func setDiskCacheByteLimit(_ limit: Int) {
-    GPHCache.shared.pinCache.diskCache.byteLimit = UInt(limit)
+    GPHCache.shared.diskCacheByteLimit = UInt(limit)
   }
   
   @objc func setCacheSetting(_ setting: String) {

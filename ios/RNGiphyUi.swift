@@ -17,7 +17,7 @@ class RNGiphyUI: RCTEventEmitter {
   private var onDismiss: RCTResponseSenderBlock?
   
   @objc func configure(_ apiKey: String) {
-    GiphyUISDK.configure(apiKey: apiKey)
+    Giphy.configure(apiKey: apiKey)
   }
   
   @objc func present(_ config: [String: Any], onSelect: @escaping RCTResponseSenderBlock, onDismiss: RCTResponseSenderBlock?) {

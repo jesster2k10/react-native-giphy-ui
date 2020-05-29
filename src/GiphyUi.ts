@@ -3,7 +3,12 @@ import { GiphyGif } from './types';
 
 const { RNGiphyUI } = NativeModules;
 
-export type GiphyTheme = 'light' | 'dark';
+export type GiphyTheme =
+  | 'light'
+  | 'dark'
+  | 'lightBlur'
+  | 'darkBlur'
+  | 'automatic';
 export type GiphyLayout = 'carousel' | 'waterfall';
 export type GiphyMediaType = 'gifs' | 'stickers' | 'text' | 'emoji';
 export type Callback = (() => void) | null;

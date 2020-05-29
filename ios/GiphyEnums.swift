@@ -24,12 +24,16 @@ enum GiphyTheme: String, GiphyEnum {
   
   var actualValue: GPHTheme {
     switch self.rawValue {
-    case "dark":
-      return .dark
-    case "light":
-      return .light
-    default:
-      return .dark
+      case "dark":
+        return GPHTheme(type: .dark)
+      case "darkBlur":
+        return GPHTheme(type: .darkBlur)
+      case "light":
+        return GPHTheme(type: .light)
+      case "lightBlur":
+        return GPHTheme(type: .lightBlur)
+      default:
+        return GPHTheme(type: .automatic)
     }
   }
 }
