@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.static_framework = true
 
-  s.dependency "React"
+  s.dependency "React-Core"
   s.dependency "Giphy"
 end
